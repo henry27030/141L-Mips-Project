@@ -1,0 +1,202 @@
+000100000 //add r8 until r8=32
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000100000
+000011100 //r7=32
+001001111 //100
+001001111 //10000
+001001110 //100000
+100010111 //r2=mem[32], meaning r2=contains pattern at [7:3]
+000011100 //r7 = 33
+001100101 //shift r2 right by 3
+001100100
+100001000 //r1=mem[0] //LoopStart
+110011001 //r3=r1=mem[0] //to reduce accessing memory, store in in a register
+001100011 //r1=1st 5 bits of input
+001100010
+010001010 //check if XOR result is 0:
+000000100 //make changes so that if r1 was 0, then conversion would equal 32
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011011101 //b to loopInc1 = instr 52
+000010000 //where r4 counts times occurred in just one bit while r6 also middle bit
+000011000
+110001011 //r1=input1 loopInc1
+001000010 //r1=second 5 bits of input
+001100011
+001100010
+010001010 //now check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011011011 //b to loopInc2 = instr 64
+000010000
+000011000
+110001011 //r1 = input1 loopInc2
+001000011 //r1=third 5 bits of input
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011011001 //b to loopInc3 = instr 76
+000010000
+000011000
+110001011 //r1=input1 loopInc3
+001000011 //r1=fourth 5 bits of input
+001000010
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011010111 //b to loopInc4, instr89
+000010000
+000011000
+110001011 //loopInc4, start check r5
+001100011 //r1=first 5 bits of input
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011010101 //b to loopInc5 = instr101
+000010100
+110001111 //r1=r7=33
+011001111 //always branches because r7 always greater than r8, b to startR6 instr 139
+110001011 //loopInc5
+001000010 //r1=second 5 bits of input
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011010011 //b to loopInc6 = instr114
+000010100
+110001111 //r1=r7=33
+011001111 //b to startR6, instr 139
+110001011 //loopInc6
+001000011 //r1=third 5 bits of input
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011010001 //b to loopInc7 = instr 127
+000010100
+110001111 //r1=r7=33
+011001111 //b to startR6 = instr 139
+110001011 //loopInc7
+001000011 //r1=fourth 5 bits of input
+001000010
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011001111 //if r1!=r8 meaning r1!=32, b to startR6, which is the add r0 line instr139
+000010100
+000000000 //r0=1 startR6
+011001100 //if r0!=r8, branch to nextLine, else jumps to LoopRestart. nextLine=instr 143
+110001111 //r1=r7=33
+011000101 //always branches, b to LoopRestart, instr 196
+110001011 //r1 =r3 =mem[0] //nextLine
+100011000 //r3=mem[1]
+001000111 //shift r3 left by 4
+001000111
+001100111 //shift r3 right by 4
+001100111
+001100011 //shift r1 right by 4
+001100011
+111011001 //r3 now has right 4 bits of mem[1] concat left 4 bits of mem[0]
+110001011 //now r1 has the new 8 bits to check
+001100011 //r1=first 5 bits of input
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011001011 //b to loopInc11 = instr 162
+000011000
+110001011 //r1=8 bits to check loopInc11
+001000010 //r1=second 5 bits of input
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011001001 //b to loopInc12 instr=173
+000011000
+110001011 //r1=r3=8 bits to check loopInc12
+001000011 //r1=third 5 bits of input
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011000111 //b to loopInc13 = instr 184
+000011000
+110001011 //r1=8bits to check loopInc13
+001000011 //r1=fourth 5 bits of input
+001000010
+001100011
+001100010
+010001010 //check if XOR result is 0:
+000000100
+001010011 //r1 = 00100000 ==32 in decimal
+001010011
+001010010
+011000101 //b to LoopRestart, instr196
+000011000
+011000010 //LoopRestart if r0!=32, once r0=32 go past this, b to instr40
+101111100 //store in mem[33]=r4
+000011100 //r0+1=34
+101111101 //store in mem[34]=r5
+000011100  //r0+1=35
+101111110 //store in mem[35]=r6

@@ -1,0 +1,48 @@
+000000000 //add r0 #0, r0 has 1 now
+000000000 //add r0 #0, r0 has 2 now
+000000000 //add r0 #0, r0 has 3 now
+000000000 //add r0 #0, r0 has 4 now
+000000000 //add r0 #0, r0 has 5 now
+000000000 //add r0 #0, r0 has 6 now
+000000000 //add r0 #0, r0 has 7 now
+000000000 //add r0 #0, r0 has 8 now
+000000000 //add r0 #0, r0 has 9 now
+000000000 //add r0 #0, r0 has 10 now
+000000000 //add r0 #0, r0 has 11 now
+000000000 //add r0 #0, r0 has 12 now
+000000000 //add r0 #0, r0 has 13 now
+000000000 //add r0 #0, r0 has 14 now
+000000000 //add r0 #0, r0 has 15 now
+000000000 //add r0 #0, r0 has 16 now
+000000000 //add r0 #0, r0 has 17 now
+000000000 //add r0 #0, r0 has 18 now
+000000000 //add r0 #0, r0 has 19 now
+000000000 //add r0 #0, r0 has 20 now
+000000000 //add r0 #0, r0 has 21 now
+000000000 //add r0 #0, r0 has 22 now
+000000000 //add r0 #0, r0 has 23 now
+000000000 //add r0 #0, r0 has 24 now
+000000000 //add r0 #0, r0 has 25 now
+000000000 //add r0 #0, r0 has 26 now
+000000000 //add r0 #0, r0 has 27 now
+000000000 //add r0 #0, r0 has 28 now
+000000000 //add r0 #0, r0 has 29 now
+000000000 //add r0 #0, r0 has 30 now, use to store
+000000100 //add r1 #1, r1 has 8'b00000001
+101000001 //store mem[r0]=r1, store 8'b00000001 into mem[30]
+000000000 //add r0 #0, r0 has 31 now
+101000001 //store mem[r0]=r1, store 8'b00000001 into mem[31]
+000000000 //add r0 #0, r0 has 32 now
+000100000 //add r8 #0, r8 has 1 now
+000100000 //add r8 #0, r8 has 2 now
+000100000 //add r8 #0, r8 has 3 now
+000100000 //add r8 #0, r8 has 4 now
+000100000 //add r8 #0, r8 has 5 now
+000100000 //add r8 #0, r8 has 6 now
+000100000 //add r8 #0, r8 has 7 now
+000100000 //add r8 #0, r8 has 8 now
+000100000 //add r8 #0, r8 has 9 now
+000100000 //add r8 #0, r8 has 10 now
+000000100 //add r1 #0, r1 has 2 now
+011011111 //branch lookup table[01111] if r1!=r8
+101000001 //store mem[r0]=r1, store 8'b00001010 into mem[31]
